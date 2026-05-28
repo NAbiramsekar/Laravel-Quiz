@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Answer extends Model
+{
+    protected $fillable = [
+        'attempt_id',
+        'question_id',
+        'answer_text',
+        'selected_options',
+    ];
+
+    protected $casts = [
+        'selected_options' => 'array',
+    ];
+
+    public function attempt()
+        {
+            return $this->belongsTo(Attempt::class);
+        }
+
+        public function question()
+        {
+            return $this->belongsTo(Question::class);
+        }
+}
