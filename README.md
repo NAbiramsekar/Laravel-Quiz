@@ -1,3 +1,5 @@
+# Laravel-Quiz
+
 # Laravel Dynamic Quiz System
 
 A web-based quiz management and assessment platform built with Laravel. This project allows admins/instructors to create quizzes with dynamic question types, and allows users to attempt quizzes and view scored results with answer review.
