@@ -34,10 +34,12 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
-        Quiz::create([
-            'title' => $request->title,
-            'description' => $request->description,
+        $validated = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
         ]);
+
+        Quiz::create($validated);
 
         return redirect()->route('quizzes.index');
     }
